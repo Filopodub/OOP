@@ -7,9 +7,8 @@ import java.util.HashMap;
 
 
 public class Company extends Organization{
-    String companyName;
     private HashMap<ProjectInterface, Integer> projectsBudget = new HashMap<>(); 
-    int ownResources = Constants.COMPANY_INIT_OWN_RESOURCES;
+    private int ownResources = Constants.COMPANY_INIT_OWN_RESOURCES;
 
     @Override
     public int getProjectBudget(ProjectInterface pi) {
@@ -22,7 +21,7 @@ public class Company extends Organization{
         dotation(pi, budgetForYear);
     }
 
-    public void dotation(ProjectInterface pi, int budgetForYear) {    
+    private void dotation(ProjectInterface pi, int budgetForYear) {    
         int dotation = Math.min(ownResources, budgetForYear); 
         projectsBudget.put(pi, dotation + projectsBudget.getOrDefault(pi, 0)); 
         ownResources -= dotation;

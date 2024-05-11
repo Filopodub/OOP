@@ -10,8 +10,7 @@ import sk.stuba.fei.uim.oop.entity.grant.ProjectInterface;
 import sk.stuba.fei.uim.oop.entity.people.PersonInterface;
 
 public class Organization implements OrganizationInterface {
-
-    String organizationName;
+    private String organizationName;
     private HashMap<PersonInterface, Integer> organizationEmployers = new HashMap<>();
     private HashMap<Integer, HashSet<ProjectInterface>> projectsForYears = new HashMap<>();
 
@@ -71,7 +70,6 @@ public class Organization implements OrganizationInterface {
 
     @Override
     public void projectBudgetUpdateNotification(ProjectInterface pi, int year, int budgetForYear) {
-        System.err.println("This always happends");
         pi.setBudgetForYear(year, budgetForYear);
     }
 

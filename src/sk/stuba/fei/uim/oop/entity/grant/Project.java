@@ -9,11 +9,11 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class Project implements ProjectInterface{
-    int projectYear;
-    String projectName;
-    HashMap<Integer, Integer> budgetForYears = new HashMap<>();
-    HashSet<PersonInterface> projectParticipants = new HashSet<>();
-    OrganizationInterface projectApplicant;
+    private int projectYear;
+    private String projectName;
+    private HashMap<Integer, Integer> budgetForYears = new HashMap<>();
+    private HashSet<PersonInterface> projectParticipants = new HashSet<>();
+    private OrganizationInterface projectApplicant;
 
     @Override
     public String getProjectName() {

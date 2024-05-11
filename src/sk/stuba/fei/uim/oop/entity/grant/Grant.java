@@ -8,12 +8,12 @@ import java.util.stream.Collectors;
 
 
 public class Grant implements GrantInterface {
-     String grantIdentifier;
-     int grantYear, grantBudget, grantRemainingBudget;
-     AgencyInterface agency;
-     Set<ProjectInterface> registeredProjects = new LinkedHashSet<>();
-     Set<ProjectInterface> passedProjects = new LinkedHashSet<>();
-     GrantState grantState;
+    private String grantIdentifier;
+    private int grantYear, grantBudget, grantRemainingBudget;
+    private AgencyInterface agency;
+    private Set<ProjectInterface> registeredProjects = new LinkedHashSet<>();
+    private Set<ProjectInterface> passedProjects = new LinkedHashSet<>();
+    private GrantState grantState;
 
     @Override
     public String getIdentifier() {
@@ -141,8 +141,6 @@ public class Grant implements GrantInterface {
     }
 
 
-
-    
     private void divideBudget(Set<ProjectInterface> projects) {
         List<ProjectInterface> eligibleProjects = projects.stream()
                                                         .filter(project -> project.getTotalBudget() == 0)

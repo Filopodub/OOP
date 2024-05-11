@@ -7,8 +7,8 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 public class Agency implements AgencyInterface{
-    String agencyName;
-    HashMap<Integer, HashSet<GrantInterface>> grantsForYears = new HashMap<>();
+    private String agencyName;
+    private HashMap<Integer, HashSet<GrantInterface>> grantsForYears = new HashMap<>();
 
     @Override
     public String getName() {
