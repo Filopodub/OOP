@@ -39,37 +39,11 @@ public class Person implements PersonInterface{
         return personOrganizations;
     }
 
-    // @Override
-    // public int hashCode() {
-    //     final int prime = 31;
-    //     int result = 1;
-    //     result = prime * result + ((personName == null) ? 0 : personName.hashCode());
-    //     return result;
-    // }
-
-    // @Override
-    // public boolean equals(Object obj) {
-    //     if (this == obj)
-    //         return true;
-    //     if (obj == null)
-    //         return false;
-    //     if (getClass() != obj.getClass())
-    //         return false;
-    //     Person other = (Person) obj;
-    //     if (personName == null) {
-    //         if (other.personName != null)
-    //             return false;
-    //     } else if (!personName.equals(other.personName))
-    //         return false;
-    //     return true;
-    // }
-
     @Override
     public int hashCode() {
         final int prime = 31;
         int result = 1;
         result = prime * result + ((personName == null) ? 0 : personName.hashCode());
-        result = prime * result + ((personAddress == null) ? 0 : personAddress.hashCode());
         return result;
     }
 
@@ -87,13 +61,39 @@ public class Person implements PersonInterface{
                 return false;
         } else if (!personName.equals(other.personName))
             return false;
-        if (personAddress == null) {
-            if (other.personAddress != null)
-                return false;
-        } else if (!personAddress.equals(other.personAddress))
-            return false;
         return true;
     }
+
+    // @Override
+    // public int hashCode() {
+    //     final int prime = 31;
+    //     int result = 1;
+    //     result = prime * result + ((personName == null) ? 0 : personName.hashCode());
+    //     result = prime * result + ((personAddress == null) ? 0 : personAddress.hashCode());
+    //     return result;
+    // }
+
+    // @Override
+    // public boolean equals(Object obj) {
+    //     if (this == obj)
+    //         return true;
+    //     if (obj == null)
+    //         return false;
+    //     if (getClass() != obj.getClass())
+    //         return false;
+    //     Person other = (Person) obj;
+    //     if (personName == null) {
+    //         if (other.personName != null)
+    //             return false;
+    //     } else if (!personName.equals(other.personName))
+    //         return false;
+    //     if (personAddress == null) {
+    //         if (other.personAddress != null)
+    //             return false;
+    //     } else if (!personAddress.equals(other.personAddress))
+    //         return false;
+    //     return true;
+    // }
 
     
 }

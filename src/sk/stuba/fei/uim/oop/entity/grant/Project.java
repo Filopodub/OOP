@@ -42,8 +42,7 @@ public class Project implements ProjectInterface{
 
     @Override
     public int getBudgetForYear(int year) {
-        // return budgetForYears.getOrDefault(year,0);
-        return budgetForYears.get(year);
+        return budgetForYears.getOrDefault(year,0);
     }
 
     @Override
