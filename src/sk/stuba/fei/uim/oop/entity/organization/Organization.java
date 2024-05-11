@@ -11,8 +11,8 @@ import sk.stuba.fei.uim.oop.entity.people.PersonInterface;
 
 public class Organization implements OrganizationInterface {
     private String organizationName;
-    private HashMap<PersonInterface, Integer> organizationEmployers = new HashMap<>();
-    private HashMap<Integer, HashSet<ProjectInterface>> projectsForYears = new HashMap<>();
+    private HashMap<PersonInterface, Integer> organizationEmployers;
+    private HashMap<Integer, HashSet<ProjectInterface>> projectsForYears;
 
     @Override
     public String getName() {
@@ -22,6 +22,8 @@ public class Organization implements OrganizationInterface {
     @Override
     public void setName(String name) {
         this.organizationName = name;
+        this.organizationEmployers = new HashMap<>();
+        this.projectsForYears = new HashMap<>();
     }
 
     @Override

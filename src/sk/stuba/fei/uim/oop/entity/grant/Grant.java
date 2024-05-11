@@ -11,8 +11,8 @@ public class Grant implements GrantInterface {
     private String grantIdentifier;
     private int grantYear, grantBudget, grantRemainingBudget;
     private AgencyInterface agency;
-    private Set<ProjectInterface> registeredProjects = new LinkedHashSet<>();
-    private Set<ProjectInterface> passedProjects = new LinkedHashSet<>();
+    private Set<ProjectInterface> registeredProjects;
+    private Set<ProjectInterface> passedProjects;
     private GrantState grantState;
 
     @Override
@@ -23,6 +23,8 @@ public class Grant implements GrantInterface {
     @Override
     public void setIdentifier(String identifier) {
         this.grantIdentifier = identifier;
+        this.registeredProjects  = new LinkedHashSet<>();
+        this.passedProjects  = new LinkedHashSet<>();
     }
 
     @Override

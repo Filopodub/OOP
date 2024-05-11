@@ -7,8 +7,15 @@ import java.util.HashMap;
 
 
 public class Company extends Organization{
-    private HashMap<ProjectInterface, Integer> projectsBudget = new HashMap<>(); 
-    private int ownResources = Constants.COMPANY_INIT_OWN_RESOURCES;
+    private HashMap<ProjectInterface, Integer> projectsBudget; 
+    private int ownResources;
+
+    @Override
+    public void setName(String name) {
+        super.setName(name);
+        this.projectsBudget = new HashMap<>();
+        this.ownResources = Constants.COMPANY_INIT_OWN_RESOURCES;
+    }
 
     @Override
     public int getProjectBudget(ProjectInterface pi) {

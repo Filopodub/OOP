@@ -11,8 +11,8 @@ import java.util.Set;
 public class Project implements ProjectInterface{
     private int projectYear;
     private String projectName;
-    private HashMap<Integer, Integer> budgetForYears = new HashMap<>();
-    private HashSet<PersonInterface> projectParticipants = new HashSet<>();
+    private HashMap<Integer, Integer> budgetForYears;
+    private HashSet<PersonInterface> projectParticipants;
     private OrganizationInterface projectApplicant;
 
     @Override
@@ -23,6 +23,8 @@ public class Project implements ProjectInterface{
     @Override
     public void setProjectName(String name) {
         this.projectName = name;
+        this.budgetForYears = new HashMap<>();
+        this.projectParticipants = new HashSet<>();
     }
 
     @Override
@@ -59,6 +61,9 @@ public class Project implements ProjectInterface{
 
     @Override
     public void addParticipant(PersonInterface participant) {
+        if (this.projectParticipants == null) {
+            this.projectParticipants = new HashSet<>();
+        }
         if(projectApplicant != null && projectApplicant.getEmployees().contains(participant)){
             projectParticipants.add(participant);
         }  
